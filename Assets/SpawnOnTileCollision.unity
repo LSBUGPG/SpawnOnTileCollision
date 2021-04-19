@@ -133,9 +133,10 @@ GameObject:
   - component: {fileID: 362483508}
   - component: {fileID: 362483507}
   - component: {fileID: 362483509}
-  - component: {fileID: 362483510}
   - component: {fileID: 362483512}
   - component: {fileID: 362483511}
+  - component: {fileID: 362483513}
+  - component: {fileID: 362483510}
   m_Layer: 0
   m_Name: Tilemap
   m_TagString: Untagged
@@ -410,12 +411,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a36c1429f958c946b60947c6dde1dbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collisionTag: Player
-  map: {fileID: 362483508}
-  collisionOffset: {x: 0, y: -0.5}
-  tile: {fileID: 0}
-  spawnTile: {fileID: 0}
-  spawnOffset: {x: 0, y: 0, z: 0}
+  tile: {fileID: 11400000, guid: e2c65c387b0e7a74aa36d96072f1c114, type: 2}
+  offset: {x: 0, y: 1, z: 0}
 --- !u!66 &362483511
 CompositeCollider2D:
   m_ObjectHideFlags: 0
@@ -473,6 +470,34 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &362483513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 362483505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4cb12d7c3044fb4abad9b9073765f38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tile: {fileID: 11400000, guid: faaf90ac8e197ad459da93296f3e749d, type: 2}
+  collisionOffset: {x: 0, y: -0.5}
+  onCollision:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 362483510}
+        m_MethodName: OnCollision
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -734,4 +759,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   physics: {fileID: 1844995963}
-  force: 10
+  force: 2
