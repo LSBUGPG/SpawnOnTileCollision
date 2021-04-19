@@ -411,7 +411,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a36c1429f958c946b60947c6dde1dbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tile: {fileID: 11400000, guid: e2c65c387b0e7a74aa36d96072f1c114, type: 2}
+  ground: {fileID: 11400000, guid: faaf90ac8e197ad459da93296f3e749d, type: 2}
+  grass: {fileID: 11400000, guid: e2c65c387b0e7a74aa36d96072f1c114, type: 2}
   offset: {x: 0, y: 1, z: 0}
 --- !u!66 &362483511
 CompositeCollider2D:
@@ -482,22 +483,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4cb12d7c3044fb4abad9b9073765f38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tile: {fileID: 11400000, guid: faaf90ac8e197ad459da93296f3e749d, type: 2}
-  collisionOffset: {x: 0, y: -0.5}
-  onCollision:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 362483510}
-        m_MethodName: OnCollision
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  offset: {x: 0, y: -0.5}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -703,7 +689,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1844995960}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.79, z: 0}
+  m_LocalPosition: {x: -0.2, y: 1.79, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -759,4 +745,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   physics: {fileID: 1844995963}
-  force: 2
+  force: 10
