@@ -21,12 +21,6 @@ public class SpawnGrass : MonoBehaviour
     public TileBase ground;
     public TileBase grass;
     public Vector3Int offset = Vector3Int.up;
-    Tilemap map;
-
-    void Awake()
-    {
-        map = GetComponent<Tilemap>();
-    }
 
     public void OnCollisionEnterTile(CollisionTile collision)
     {
@@ -36,7 +30,7 @@ public class SpawnGrass : MonoBehaviour
             Vector3Int coordinate = collision.coordinate + offset;
             if (collision.tile != grass)
             {
-                map.SetTile(coordinate, grass);
+                collision.tilemap.SetTile(coordinate, grass);
             }
         }
     }
